@@ -37,7 +37,7 @@ client.on("message", async message => {
   }  else if  (message.content.startsWith(`${prefix}invite`)) {
     var botEmbed = new Discord.MessageEmbed()
             .setTitle('Bot info')
-            .setDescription("Versie 1.0.0\n https://discord.com/oauth2/authorize?client_id=777250493364699177&scope=bot&permissions=3147008")
+            .setDescription("Versie 1.0.0\n `https://discord.com/oauth2/authorize?client_id=777250493364699177&scope=bot&permissions=3147008`")
 
             .setColor("#0099ff")
             .addField("Bot naam", client.user.username)
