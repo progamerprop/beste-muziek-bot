@@ -34,9 +34,7 @@ client.on("message", async message => {
   } else if (message.content.startsWith(`${prefix}stop`)) {
     stop(message, serverQueue);
     return;
-  } else {
-    message.channel.send("You need to enter a valid command!");
-  } if  (message.content.startsWith(`${prefix}invite`)) {
+  }  else if  (message.content.startsWith(`${prefix}invite`)) {
     var botEmbed = new Discord.MessageEmbed()
             .setTitle('Bot info')
             .setDescription("Versie 1.0.0\n https://discord.com/oauth2/authorize?client_id=777250493364699177&scope=bot&permissions=3147008")
@@ -50,6 +48,8 @@ client.on("message", async message => {
 
         return message.channel.send(botEmbed);
         console.log('Bot informatie is opgevraagd')
+  } else {
+    message.channel.send("Enter a vailid command");
 }});
 
 async function execute(message, serverQueue) {
@@ -99,7 +99,7 @@ async function execute(message, serverQueue) {
   } else {
     serverQueue.songs.push(song);
     return message.channel.send(`${song.title} has been added to the queue!`);
-  }
+  } 
 }
 
 function skip(message, serverQueue) {
