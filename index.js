@@ -125,5 +125,22 @@ function play(guild, song) {
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
 }
+if (message.content.startsWith(`${prefix}invite`)) {
+    var botEmbed = new discord.MessageEmbed()
+            .setTitle('Bot info')
+            .setDescription("Versie 1.0.0\n https://discord.com/oauth2/authorize?client_id=777250493364699177&scope=bot&permissions=3147008")
+
+            .setColor("#0099ff")
+            .addField("Bot naam", client.user.username)
+
+            
+            .setTimestamp()
+            .setFooter('Bot gemaakt door: Aron Gaming');
+
+        return message.channel.send(botEmbed);
+        console.log('Bot informatie is opgevraagd')
+
+
+}
 
 client.login(process.env.TOKEN);
