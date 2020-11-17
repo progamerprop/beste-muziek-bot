@@ -1,3 +1,4 @@
+  
 const Discord = require("discord.js");
 const { prefix, token } = require("./config.json");
 const ytdl = require("ytdl-core");
@@ -35,7 +36,7 @@ client.on("message", async message => {
     return;
   } else {
     message.channel.send("You need to enter a valid command!");
-  } else { (message.content.startsWith(`${prefix}invite`)) {
+  } if  (message.content.startsWith(`${prefix}invite`)) {
     var botEmbed = new discord.MessageEmbed()
             .setTitle('Bot info')
             .setDescription("Versie 1.0.0\n https://discord.com/oauth2/authorize?client_id=777250493364699177&scope=bot&permissions=3147008")
@@ -140,6 +141,6 @@ function play(guild, song) {
 } 
 
 
-}
+
 
 client.login(process.env.TOKEN);
