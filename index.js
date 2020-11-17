@@ -35,7 +35,7 @@ client.on("message", async message => {
     return;
   } else {
     message.channel.send("You need to enter a valid command!");
-  } else if (message.content.startsWith(`${prefix}invite`)) {
+  } else { (message.content.startsWith(`${prefix}invite`)) {
     var botEmbed = new discord.MessageEmbed()
             .setTitle('Bot info')
             .setDescription("Versie 1.0.0\n https://discord.com/oauth2/authorize?client_id=777250493364699177&scope=bot&permissions=3147008")
@@ -49,7 +49,7 @@ client.on("message", async message => {
 
         return message.channel.send(botEmbed);
         console.log('Bot informatie is opgevraagd')
-});
+}});
 
 async function execute(message, serverQueue) {
   const args = message.content.split(" ");
