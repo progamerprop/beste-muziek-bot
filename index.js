@@ -33,10 +33,13 @@ client.on("message", async message => {
   } else if (message.content.startsWith(`${prefix}stop`)) {
     stop(message, serverQueue);
     return;
+  } else if (message.content.startsWith(`..`)) {
+    
+    return;
+
   } else {
     message.channel.send("You need to enter a valid command!");
-  }
-});
+}});
 
 async function execute(message, serverQueue) {
   const args = message.content.split(" ");
